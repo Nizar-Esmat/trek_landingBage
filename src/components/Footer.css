@@ -1,0 +1,13 @@
+/* Footer.css */
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-20%);
+    }
+}
+
+.animate-wave {
+    animation: wave 5s linear infinite;
+}

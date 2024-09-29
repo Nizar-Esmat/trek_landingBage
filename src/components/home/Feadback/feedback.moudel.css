@@ -1,0 +1,6 @@
+/* CardSwitcher.css */
+.transition-opacity {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Optionally, you can add more styles here */

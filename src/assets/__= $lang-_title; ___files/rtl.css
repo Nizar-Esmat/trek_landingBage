@@ -1,0 +1,14 @@
+.navbar-right{float: left !important}
+.header__background{left: 0;right: auto}
+.buildings::after {background-image: url(../images/background--header3.png);}
+#owl1 .owl-nav{right: -50%;left: auto}
+.blog:nth-child(even) > div{float: left}
+select{background-position: 3% !important}
+.pagination > li:first-child > a, .pagination > li:first-child > span,.pagination > li:last-child > a, .pagination > li:last-child > span{
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+.contact-item img{float: right}
