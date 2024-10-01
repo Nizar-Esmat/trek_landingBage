@@ -1,0 +1,44 @@
+@keyframes move-building {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 200% 0; /* Adjust this based on your image size */
+    }
+}
+
+#building {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100vh; /* Full viewport height */
+    width: 200%; /* Full width for animation */
+}
+
+#building::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200%; /* Ensure it covers enough width for seamless animation */
+    background-repeat: repeat-x;
+    background-size: contain; /* Fit the image */
+    background-image: url("../../../assets/Home/buildings.png");
+    animation: move-building 50s linear infinite; /* Ensure smooth animation */
+}
+
+.animate-building {
+    animation: move-building 50s linear infinite;
+}
+
+.animate-car {
+    animation: car-move 3s ease-in-out infinite;
+}
+
+/* Responsive settings */
+@media (max-width: 768px) {
+    #an {
+       display: none;
+    }
+}

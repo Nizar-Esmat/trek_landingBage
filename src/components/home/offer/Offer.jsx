@@ -14,7 +14,7 @@ const offers = [
 function Offer() {
     return (
         <div className="container my-10">
-            <h2 className="font-bold text-red-700 text-3xl text-center py-1 my-4">Offers</h2>
+            <h2 className="font-bold text-red-700 text-5xl text-center py-1 my-4">Offers</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {offers.map((offer, index) => (
                     <div key={index} className="text-center transition transform hover:scale-105 duration-300">

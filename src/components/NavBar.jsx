@@ -9,7 +9,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import logo from "../assets/logo.jpg";
-import { Link as Scroll } from 'react-scroll';  // Import react-scroll Link
+import { Link } from "react-router-dom";
 
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -35,11 +35,11 @@ function ResponsiveAppBar() {
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
                         <IconButton
                             size="large"
-                            aria-label="account of current user"
+                            aria-label="menu"
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
-                            color="black"
+                            color="red"
                         >
                             <MenuIcon />
                         </IconButton>
@@ -59,192 +59,105 @@ function ResponsiveAppBar() {
                             onClose={handleCloseNavMenu}
                             sx={{ display: { xs: 'block', md: 'none' } }}
                         >
-                            {/* Define each menu item individually */}
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Scroll
-                                    to="home"
-                                    smooth={true}
-                                    duration={500}
-                                    style={{ textDecoration: 'none', color: 'black' }}
-                                >
+                                <Link to="/Home" style={{ textDecoration: 'none', color: 'black' }}>
                                     Home
-                                </Scroll>
+                                </Link>
                             </MenuItem>
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Scroll
-                                    to="offers"
-                                    smooth={true}
-                                    duration={500}
-                                    style={{ textDecoration: 'none', color: 'black' }}
-                                >
-                                    offers
-                                </Scroll>
+                                <Link to="/about" style={{ textDecoration: 'none', color: 'black' }}>
+                                    About
+                                </Link>
                             </MenuItem>
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Scroll
-                                    to="Service"
-                                    smooth={true}
-                                    duration={500}
-                                    style={{ textDecoration: 'none', color: 'black' }}
-                                >
-                                    Service
-                                </Scroll>
-                            </MenuItem>
-                            <MenuItem onClick={handleCloseNavMenu}>
-                                <Scroll
-                                    to="blog"
-                                    smooth={true}
-                                    duration={500}
-                                    style={{ textDecoration: 'none', color: 'black' }}
-                                >
+                                <Link to="/blog" style={{ textDecoration: 'none', color: 'black' }}>
                                     Blog
-                                </Scroll>
+                                </Link>
                             </MenuItem>
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Scroll
-                                    to="services"
-                                    smooth={true}
-                                    duration={500}
-                                    style={{ textDecoration: 'none', color: 'black' }}
-                                >
-                                    Services
-                                </Scroll>
+                                <Link to="/contact" style={{ textDecoration: 'none', color: 'black' }}>
+                                    Contact
+                                </Link>
                             </MenuItem>
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Scroll
-                                    to="abouts"
-                                    smooth={true}
-                                    duration={500}
-                                    style={{ textDecoration: 'none', color: 'black' }}
-                                >
-                                    About Us
-                                </Scroll>
+                                <Link to="/service" style={{ textDecoration: 'none', color: 'black' }}>
+                                    Service
+                                </Link>
                             </MenuItem>
                         </Menu>
                     </Box>
 
                     {/* Page Buttons for Larger Screens */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'end' }}>
-                        {/* Define each button individually */}
                         <Button
+                            component={Link}
+                            to="/Home"
                             sx={{
                                 m: 2,
                                 fontSize: "16px",
                                 color: 'black',
                                 display: 'block',
-                                '&:hover': {
-                                    color: 'red',  // Change color to red on hover
-                                },
+                                textDecoration: 'none',
+                                '&:hover': { color: 'red' },
                             }}
                         >
-                            <Scroll
-                                to="home"
-                                smooth={true}
-                                duration={500}
-                                style={{ textDecoration: 'none', color: 'inherit' }}
-                            >
-                                Home
-                            </Scroll>
+                            Home
                         </Button>
                         <Button
+                            component={Link}
+                            to="/about"
                             sx={{
                                 m: 2,
                                 fontSize: "16px",
                                 color: 'black',
                                 display: 'block',
-                                '&:hover': {
-                                    color: 'red',
-                                },
+                                textDecoration: 'none',
+                                '&:hover': { color: 'red' },
                             }}
                         >
-                            <Scroll
-                                to="offers"
-                                smooth={true}
-                                duration={500}
-                                style={{ textDecoration: 'none', color: 'inherit' }}
-                            >
-                                offers
-                            </Scroll>
+                            About
                         </Button>
                         <Button
+                            component={Link}
+                            to="/blog"
                             sx={{
                                 m: 2,
                                 fontSize: "16px",
                                 color: 'black',
                                 display: 'block',
-                                '&:hover': {
-                                    color: 'red',
-                                },
+                                textDecoration: 'none',
+                                '&:hover': { color: 'red' },
                             }}
                         >
-                            <Scroll
-                                to="Service"
-                                smooth={true}
-                                duration={500}
-                                style={{ textDecoration: 'none', color: 'inherit' }}
-                            >
-                                Service
-                            </Scroll>
+                            Blog
                         </Button>
                         <Button
+                            component={Link}
+                            to="/contact"
                             sx={{
                                 m: 2,
                                 fontSize: "16px",
                                 color: 'black',
                                 display: 'block',
-                                '&:hover': {
-                                    color: 'red',
-                                },
+                                textDecoration: 'none',
+                                '&:hover': { color: 'red' },
                             }}
                         >
-                            <Scroll
-                                to="blog"
-                                smooth={true}
-                                duration={500}
-                                style={{ textDecoration: 'none', color: 'inherit' }}
-                            >
-                                Blog
-                            </Scroll>
+                            Contact
                         </Button>
                         <Button
+                            component={Link}
+                            to="/service"
                             sx={{
                                 m: 2,
                                 fontSize: "16px",
                                 color: 'black',
                                 display: 'block',
-                                '&:hover': {
-                                    color: 'red',
-                                },
+                                textDecoration: 'none',
+                                '&:hover': { color: 'red' },
                             }}
                         >
-                            <Scroll
-                                to="services"
-                                smooth={true}
-                                duration={500}
-                                style={{ textDecoration: 'none', color: 'inherit' }}
-                            >
-                                Services
-                            </Scroll>
-                        </Button>
-                        <Button
-                            sx={{
-                                m: 2,
-                                fontSize: "16px",
-                                color: 'black',
-                                display: 'block',
-                                '&:hover': {
-                                    color: 'red',
-                                },
-                            }}
-                        >
-                            <Scroll
-                                to="abouts"
-                                smooth={true}
-                                duration={500}
-                                style={{ textDecoration: 'none', color: 'inherit' }}
-                            >
-                                About Us
-                            </Scroll>
+                            Service
                         </Button>
                     </Box>
                 </Toolbar>

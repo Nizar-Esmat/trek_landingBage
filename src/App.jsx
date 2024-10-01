@@ -1,20 +1,32 @@
 import { useState } from 'react';
 import './App.css';
-import NavBar from "./components/NavBar.jsx";
+
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Layout from "./components/Layout.jsx";
+import Blog from "./components/blog/Blog.jsx";
+import Contact from "./components/contact/Contact.jsx";
+import Service from "./components/Service/Service.jsx";
+import NotFound from "./components/NotFound/NotFound.jsx";
+import About from "./components/About/About.jsx";
 import Home from "./components/home/Home.jsx";
-import Footer from "./components/Footer.jsx";
-import Abouts from "./components/home/about/Abouts.jsx";
-import { Element } from "react-scroll";
-import Offer from "./components/home/offer/Offer.jsx";
-import Service from "./components/home/service/service.jsx";
-import Feadback from "./components/home/Feadback/feadback.jsx";
+
+
+let router = createBrowserRouter([
+    {path: "/", element:<Layout/> , children:[
+            {index : true , element : <Home/> },
+            {path : "/home" , element : <Home/> },
+            {path : "/About", element : <About />},
+            {path : "/Blog" , element : <Blog></Blog>} ,
+            {path :"/Contact" , element : <Contact></Contact>},
+            {path :"/Service" , element : <Service></Service>},
+            {path : "*"  , element:<NotFound></NotFound>}
+        ]},
+])
 
 function App() {
     return (
         <div >
-            <NavBar></NavBar>
-                <Home></Home>
-            <Footer></Footer>
+            <RouterProvider router={router}></RouterProvider>
         </div>
     );
 }

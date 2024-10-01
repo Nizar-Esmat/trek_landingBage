@@ -3,7 +3,7 @@ import img1 from "../../../assets/service/img1.png";
 import img2 from "../../../assets/service/img2.png";
 import img3 from "../../../assets/service/img3.png";
 import img4 from "../../../assets/service/img4.png";
-import img5 from "../../../assets/service/img5.png"; // Middle image
+import img5 from "../../../assets/service/img9.png";
 
 import cover1 from "../../../assets/service/cover1.png";
 import cover2 from "../../../assets/service/cover2.png";
@@ -19,8 +19,8 @@ const service = [
 
 function Service() {
     return (
-        <div className="container my-7">
-            <h2 className="font-bold text-red-700 text-3xl text-center py-1 my-3">service</h2>
+        <div className="container my-10">
+            <h2 className="font-bold text-red-700 text-5xl text-center py-1 my-3">service</h2>
             <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                 {/* First Column: Two smaller images */}
                 <div className="flex flex-col gap-8">
