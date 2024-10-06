@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import logo from "../assets/logo.jpg";
+import logo from "/src/assets/logo.jpg";
 import { Link } from "react-router-dom";
 
 function ResponsiveAppBar() {
@@ -23,12 +23,12 @@ function ResponsiveAppBar() {
     };
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: 'white', boxShadow: 2 }}>
+        <AppBar position="static" sx={{ backgroundColor: '#BFC4CA', boxShadow: 2 }}> {/* Set the AppBar background color to red */}
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/* Logo on the Left */}
                     <Box sx={{ flexGrow: 0, display: { xs: 'flex' } }}>
-                        <img alt="Logo" src={logo} />
+                        <img alt="Logo" src={logo} width="80px" height="20px" />
                     </Box>
 
                     {/* Menu Icon on the Left */}
@@ -39,7 +39,7 @@ function ResponsiveAppBar() {
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
-                            color="red"
+                            color="inherit" // Changed to 'inherit' for consistency with text color
                         >
                             <MenuIcon />
                         </IconButton>
@@ -95,10 +95,10 @@ function ResponsiveAppBar() {
                             sx={{
                                 m: 2,
                                 fontSize: "16px",
-                                color: 'black',
+                                color: 'white', // Changed text color to white for better contrast
                                 display: 'block',
                                 textDecoration: 'none',
-                                '&:hover': { color: 'red' },
+                                '&:hover': { color: 'black' }, // Change hover color to black for visibility
                             }}
                         >
                             Home
@@ -109,10 +109,10 @@ function ResponsiveAppBar() {
                             sx={{
                                 m: 2,
                                 fontSize: "16px",
-                                color: 'black',
+                                color: 'white',
                                 display: 'block',
                                 textDecoration: 'none',
-                                '&:hover': { color: 'red' },
+                                '&:hover': { color: 'black' },
                             }}
                         >
                             About
@@ -123,10 +123,10 @@ function ResponsiveAppBar() {
                             sx={{
                                 m: 2,
                                 fontSize: "16px",
-                                color: 'black',
+                                color: 'white',
                                 display: 'block',
                                 textDecoration: 'none',
-                                '&:hover': { color: 'red' },
+                                '&:hover': { color: 'black' },
                             }}
                         >
                             Blog
@@ -137,10 +137,10 @@ function ResponsiveAppBar() {
                             sx={{
                                 m: 2,
                                 fontSize: "16px",
-                                color: 'black',
+                                color: 'white',
                                 display: 'block',
                                 textDecoration: 'none',
-                                '&:hover': { color: 'red' },
+                                '&:hover': { color: 'black' },
                             }}
                         >
                             Contact
@@ -151,10 +151,10 @@ function ResponsiveAppBar() {
                             sx={{
                                 m: 2,
                                 fontSize: "16px",
-                                color: 'black',
+                                color: 'white',
                                 display: 'block',
                                 textDecoration: 'none',
-                                '&:hover': { color: 'red' },
+                                '&:hover': { color: 'black' },
                             }}
                         >
                             Service

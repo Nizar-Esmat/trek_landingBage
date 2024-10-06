@@ -45,7 +45,7 @@ function Bagination() {
                         {(index % 2 === 0) ? (
                             <div className="flex items-center justify-between">
                                 <div className="flex-1 mx-2">
-                                    <h3 className="font-bold">{item.title}</h3>
+                                    <h3 className="font-bold text-[#F26554]">{item.title}</h3>
                                     <p>{item.text}</p>
                                 </div>
                                 <img src={img1} alt={`Image for ${item.title}`} className="w-20 h-20 object-cover" />
@@ -54,7 +54,7 @@ function Bagination() {
                             <div className="flex flex-row-reverse items-center justify-between">
                                 <img src={img2} alt={`Image for ${item.title}`} className="w-20 h-20 object-cover"/>
                                 <div className="flex-1 mx-2">
-                                    <h3 className="font-bold">{item.title}</h3>
+                                    <h3 className="font-bold text-[#F26554]">{item.title}</h3>
                                     <p>{item.text}</p>
                                 </div>
                             </div>

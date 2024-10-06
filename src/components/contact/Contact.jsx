@@ -1,5 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
+import {Helmet} from "react-helmet";
 function Contact(props) {
 
     const defaultProps = {
@@ -13,12 +14,15 @@ function Contact(props) {
 
     return (
         <>
+            <Helmet>
+                <title>Contact Us</title>
+            </Helmet>
             <div style={{ height: '100vh', width: '100%', position: 'relative' }}>
 
                 {/* Flex container for the overlay */}
                 <div className="absolute top-0 left-0 w-full h-full flex flex-col md:flex-row z-10">
                     {/* Contact Information Section */}
-                    <div className="flex-1 bg-red-500 p-8 text-white flex items-center justify-center">
+                    <div className="flex-1 bg-[#F26554] p-8 text-white flex items-center justify-center">
                         <div>
                             <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
                             <p>If you have any questions, feel free to reach out!</p>
@@ -69,7 +73,7 @@ function Contact(props) {
                             </div>
                             <div className="flex items-center justify-between">
                                 <button
-                                    className="bg-red-400 hover:bg-red-700 text-white font-bold py-4 px-6 rounded-full focus:outline-none focus:shadow-outline"
+                                    className="bg-red-400 hover:bg-[#F26554] text-white font-bold py-4 px-6 rounded-full focus:outline-none focus:shadow-outline"
                                     type="button"
                                 >
                                     Submit

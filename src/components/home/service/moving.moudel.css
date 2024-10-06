@@ -3,7 +3,7 @@
         background-position: 0 0;
     }
     to {
-        background-position: 200% 0; /* Adjust this based on your image size */
+        background-position: 200% 0; /* Adjust to ensure smooth movement */
     }
 }
 
@@ -12,33 +12,37 @@
     right: 0;
     bottom: 0;
     height: 100vh; /* Full viewport height */
-    width: 200%; /* Full width for animation */
+    width: 100vw; /* Full viewport width */
+    overflow: hidden;
 }
 
 #building::before {
-    content: '';
+    content: ''; /* Required for pseudo-element to work */
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    width: 200%; /* Ensure it covers enough width for seamless animation */
+    width: 200%; /* Double the width for seamless animation */
     background-repeat: repeat-x;
-    background-size: contain; /* Fit the image */
+    background-size: contain;
     background-image: url("../../../assets/Home/buildings.png");
-    animation: move-building 50s linear infinite; /* Ensure smooth animation */
+    animation: move-building 30s linear infinite;
 }
 
-.animate-building {
-    animation: move-building 50s linear infinite;
-}
-
-.animate-car {
-    animation: car-move 3s ease-in-out infinite;
-}
-
-/* Responsive settings */
+/* Media Query for Small Screens */
 @media (max-width: 768px) {
-    #an {
-       display: none;
+    #building::before {
+        width: 100%;
+        background-size: 300%; /* Make the image larger to fit smaller screens */
+        animation-duration: 20s; /* Make animation a bit faster on small screens */
+    }
+    #building {
+        width: 100%;
+    }
+
+    #an img{
+        position: absolute;
+        top: 70%;
+        width: 80%;
     }
 }

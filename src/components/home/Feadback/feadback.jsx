@@ -41,7 +41,7 @@ function CardSwitcher() {
 
     return (
         <div className="my-10">
-            <h2 className="font-bold text-red-700 text-5xl text-center py-1">Feedback</h2>
+            <h2 className="font-bold text-[#F26554] text-5xl text-center py-1">Feedback</h2>
             <Slider {...settings}>
                 {cards.map((card, index) => (
                     <div key={index} className="flex flex-col items-center justify-center my-10">
@@ -50,7 +50,7 @@ function CardSwitcher() {
                             src={card.img}
                             alt={`Card ${index + 1}`}
                         />
-                        <p className="text-4xl  text-center text-gray-700    mt-4">{card.text}</p>
+                        <p className="text-4xl  text-center text-gray-700  text-[#F26554]H   mt-4">{card.text}</p>
 
                         {/* Stars Section */}
                         <div className="flex justify-center mt-4">

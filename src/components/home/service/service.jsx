@@ -19,8 +19,8 @@ const service = [
 
 function Service() {
     return (
-        <div className="container my-10">
-            <h2 className="font-bold text-red-700 text-5xl text-center py-1 my-3">service</h2>
+        <div className="container my-14">
+            <h2 className="font-bold text-[#F26554] text-5xl text-center py-1 my-3">service</h2>
             <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                 {/* First Column: Two smaller images */}
                 <div className="flex flex-col gap-8">

@@ -6,12 +6,16 @@ import img3 from '../../assets/About/img20.png';
 import Abouts from "../home/about/Abouts.jsx";
 import {Feedback} from "@mui/icons-material";
 import CardSwitcher from "../home/Feadback/feadback.jsx";
+import {Helmet} from "react-helmet";
 
 function About(props) {
     return (
         <div>
+            <Helmet>
+                <title>About</title>
+            </Helmet>
             <section className="text-center my-10 flex flex-col items-center justify-center relative">
-                <h1 className="text-red-700 text-5xl font-bold py-5">About</h1>
+                <h1 className="text-[#F26554] text-5xl font-bold py-5">About</h1>
 
                 {/* Wrapper for images to manage position */}
                 <div className="relative w-full flex justify-center items-center">
@@ -23,7 +27,7 @@ function About(props) {
                     <img src={img1} alt="About" className="relative z-10 w-1/2 h-auto object-cover shadow-lg"/>
                 </div>
 
-                <span className="text-2xl font-bold mt-10">About text</span>
+                <span className="text-2xl font-bold mt-10 text-[#F26554]">About text</span>
             </section>
 
 
@@ -37,7 +41,7 @@ function About(props) {
 
                     {/* Text Section */}
                     <div className="w-full md:w-1/2 px-4 text-center">
-                        <h3 className="text-4xl font-bold text-red-700 mb-4">mission_title</h3>
+                        <h3 className="text-4xl font-bold text-[#F26554] mb-4">mission_title</h3>
                         <span className="text-lg text-gray-700">mission_text</span>
                     </div>
                 </div>
@@ -55,7 +59,7 @@ function About(props) {
 
                     {/* Text Section */}
                     <div className="w-full md:w-1/2 px-4 text-center">
-                        <h3 className="text-4xl font-bold text-red-700 mb-4">mission_title</h3>
+                        <h3 className="text-4xl font-bold text-[#F26554] mb-4">mission_title</h3>
                         <span className="text-lg text-gray-700">mission_text</span>
                     </div>
                 </div>

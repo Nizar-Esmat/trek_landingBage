@@ -10,10 +10,16 @@ import Service from "./service/service.jsx";
 import Feadback from "./Feadback/feadback.jsx";
 
 import './service/moving.moudel.css'
+import {Helmet} from "react-helmet";
 
 function Home() {
     return (
-        <>
+        <div className="overflow-hidden">
+            <Helmet>
+                <title>
+                    Home
+                </title>
+            </Helmet>
             <div
                 className="md:flex-row h-screen flex flex-col items-center justify-around p-0 md:p-8">
                 <div id="an"
@@ -36,14 +42,14 @@ function Home() {
 
 
                 <div className="md:w-1/2 w-full px-4 flex flex-col items-center justify-center gap-7">
-                    <h1 className="font-bold text-red-700 text-5xl text-center py-2">Home</h1>
+                    <h1 className="font-bold text-[#F26554] text-5xl text-center py-2">Home</h1>
                     <h4 className="px-6 text-center text-2xl">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quis odit aperiam libero ipsa
                         natus, asperiores inventore incidunt numquam consequatur harum aliquid qui sapiente modi quam
                         autem
                         fugiat illum illo.
                     </h4>
-                    <button className="px-6 py-3 bg-red-500 rounded-full hover:bg-red-800 text-zinc-50 text-xl">
+                    <button className="px-6 py-3 bg-red-500 rounded-full hover:bg-[#F26554] text-zinc-50 text-xl">
                         Learn more
                     </button>
                 </div>
@@ -62,7 +68,7 @@ function Home() {
             <Element name="feadback">
                 <Feadback></Feadback>
             </Element>
-        </>
+        </div>
     );
 }
 

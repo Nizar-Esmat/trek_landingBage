@@ -1,0 +1,27 @@
+#pizzaAnimation {
+    animation: movingBuilding 5s infinite ease-in-out;
+    background-size: 200% 100%; /* Adjust background size */
+}
+
+@keyframes movingBuilding {
+    0% {
+        background-position: 0 0; /* Start at top-left */
+        transform: translateY(0); /* No vertical movement initially */
+    }
+    25% {
+        background-position: 50% 5%; /* Move horizontally and slightly down */
+        transform: translateY(10px); /* Move down */
+    }
+    50% {
+        background-position: 100% 0; /* Move to the middle horizontally */
+        transform: translateY(0); /* Back to the original position vertically */
+    }
+    75% {
+        background-position: 150% -5%; /* Move horizontally and slightly up */
+        transform: translateY(-10px); /* Move up */
+    }
+    100% {
+        background-position: 200% 0; /* Move to the far right horizontally */
+        transform: translateY(0); /* Back to the original vertical position */
+    }
+}
