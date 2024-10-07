@@ -8,6 +8,7 @@ import Abouts from "./about/Abouts.jsx";
 import Offer from "./offer/Offer.jsx";
 import Service from "./service/service.jsx";
 import Feadback from "./Feadback/feadback.jsx";
+import { motion } from "framer-motion"
 
 import './service/moving.moudel.css'
 import {Helmet} from "react-helmet";
@@ -22,6 +23,8 @@ function Home() {
             </Helmet>
             <div
                 className="md:flex-row h-screen flex flex-col items-center justify-around p-0 md:p-8">
+
+
                 <div id="an"
                     className="relative md:w-full w-1/2  h-screen overflow-hidden">
                     <div
@@ -68,6 +71,8 @@ function Home() {
             <Element name="feadback">
                 <Feadback></Feadback>
             </Element>
+
+
         </div>
     );
 }

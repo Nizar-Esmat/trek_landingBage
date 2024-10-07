@@ -7,8 +7,13 @@ import Abouts from "../home/about/Abouts.jsx";
 import {Feedback} from "@mui/icons-material";
 import CardSwitcher from "../home/Feadback/feadback.jsx";
 import {Helmet} from "react-helmet";
+import {AnimatePresence, motion} from "framer-motion";
+
+
 
 function About(props) {
+
+    let [visible, setVisible] = React.useState(true);
     return (
         <div>
             <Helmet>
@@ -36,7 +41,8 @@ function About(props) {
                 <div className="flex flex-col md:flex-row items-center justify-end gap-6">
                     {/* Image Section */}
                     <div className="w-full md:w-1/2">
-                        <img src={img2} alt="Mission Image" className="m-auto h-auto object-cover transition-transform duration-300 hover:scale-125"/>
+                        <img src={img2} alt="Mission Image"
+                             className="m-auto h-auto object-cover transition-transform duration-300 hover:scale-125"/>
                     </div>
 
                     {/* Text Section */}
@@ -66,7 +72,8 @@ function About(props) {
             </section>
 
 
-                <CardSwitcher></CardSwitcher>
+            <CardSwitcher></CardSwitcher>
+
 
 
 

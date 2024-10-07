@@ -1,26 +1,27 @@
 import React, { useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
-
 import img1 from "../../assets/blog/img20.png"; // Adjust paths as necessary
 import img2 from "../../assets/blog/img19.png"; // Adjust paths as necessary
+import { AnimatePresence, motion } from "framer-motion";
 
 const plog = [
-    { title: "plog 1", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quis odit aperiam libero ipsa natus, asperiores inventore incidunt numquam consequatur harum aliquid qui sapiente modi quam autem fugiat illum illo." },
-    { title: "Plog 2", text: "Blog text 2" },
-    { title: "Plog 3", text: "Blog text 3" },
-    { title: "Plog 4", text: "Blog text 4" },
-    { title: "Plog 5", text: "Blog text 5" },
-    { title: "Plog 6", text: "Blog text 6" },
-    { title: "Plog 7", text: "Blog text 7" },
-    { title: "Plog 8", text: "Blog text 8" },
-    { title: "Plog 9", text: "Blog text 9" },
-    { title: "Plog 10", text: "Blog text 10" },
-    { title: "Plog 11", text: "Blog text 11" },
+    { idx: 0, title: "Plog 1", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quis odit aperiam libero ipsa natus, asperiores inventore incidunt numquam consequatur harum aliquid qui sapiente modi quam autem fugiat illum illo." },
+    { idx: 1, title: "Plog 2", text: "Blog text 2" },
+    { idx: 2, title: "Plog 3", text: "Blog text 3" },
+    { idx: 3, title: "Plog 4", text: "Blog text 4" },
+    { idx: 4, title: "Plog 5", text: "Blog text 5" },
+    { idx: 5, title: "Plog 6", text: "Blog text 6" },
+    { idx: 6, title: "Plog 7", text: "Blog text 7" },
+    { idx: 7, title: "Plog 8", text: "Blog text 8" },
+    { idx: 8, title: "Plog 9", text: "Blog text 9" },
+    { idx: 9, title: "Plog 10", text: "Blog text 10" },
+    { idx: 10, title: "Plog 11", text: "Blog text 11" },
 ];
 
 function Bagination() {
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 3; // Number of items to show per page
+    const [selectedId, setSelectedId] = useState(null);
+    const itemsPerPage = 2; // Number of items to show per page
 
     // Calculate total pages
     const totalPages = Math.ceil(plog.length / itemsPerPage);
@@ -41,27 +42,68 @@ function Bagination() {
             {/* Display the current items */}
             <div className="mb-4">
                 {currentItems.map((item, index) => (
-                    <div key={index} className="border  rounded-full p-4 mb-2 hover:scale-110 transition:transform ease-in-out duration-200">
+                    <div
+                        key={index}
+
+                        className="border rounded-lg p-4 mb-2 cursor-pointer hover:scale-105 transition-transform ease-in-out duration-200"
+                    >
                         {(index % 2 === 0) ? (
-                            <div className="flex items-center justify-between">
+                            <motion.div
+                                onClick={() => setSelectedId(item.idx)}
+                                className="flex items-center justify-between">
                                 <div className="flex-1 mx-2">
                                     <h3 className="font-bold text-[#F26554]">{item.title}</h3>
                                     <p>{item.text}</p>
                                 </div>
                                 <img src={img1} alt={`Image for ${item.title}`} className="w-20 h-20 object-cover" />
-                            </div>
+                            </motion.div>
                         ) : (
-                            <div className="flex flex-row-reverse items-center justify-between">
-                                <img src={img2} alt={`Image for ${item.title}`} className="w-20 h-20 object-cover"/>
+                            <motion.div
+                                onClick={() => setSelectedId(item.idx)}
+                                className="flex flex-row-reverse items-center justify-between">
+                                <img src={img2} alt={`Image for ${item.title}`} className="w-20 h-20 object-cover" />
                                 <div className="flex-1 mx-2">
                                     <h3 className="font-bold text-[#F26554]">{item.title}</h3>
                                     <p>{item.text}</p>
                                 </div>
-                            </div>
+                            </motion.div>
                         )}
                     </div>
                 ))}
             </div>
+
+            {/* Modal for selected item */}
+            <AnimatePresence>
+                {selectedId !== null && selectedId !== undefined && (<motion.div
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        exit={{opacity: 0}}
+                        className="fixed inset-0 bg-gray-900 bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-7"
+                    >
+                        <motion.div
+                            layoutId={`modal-${plog[selectedId].idx}`}
+                            className="bg-white p-6 rounded-lg text-center"
+                        >
+                            <h3 className="font-bold text-[#F26554]">{plog[selectedId].title}</h3>
+                            <p className="mb-4">{plog[selectedId].text}</p>
+                            <div className="w-full flex justify-center">
+                                <img
+                                    src={selectedId % 2 === 0 ? img1 : img2}
+                                    alt={plog[selectedId].title}
+                                    className="mx-auto w-auto  object-cover"  // Centered image with size constraints
+                                />
+                            </div>
+                            <motion.button
+                                className="mt-4 p-2 bg-red-500 text-white rounded"
+                                onClick={() => setSelectedId(null)}
+                            >
+                                Close
+                            </motion.button>
+                        </motion.div>
+                    </motion.div>
+
+                )}
+            </AnimatePresence>
 
             {/* Pagination Controls */}
             <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
